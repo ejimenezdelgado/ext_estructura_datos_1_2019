@@ -31,23 +31,23 @@
             this.lblNumero = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.grbNumero = new System.Windows.Forms.GroupBox();
+            this.txtNumero = new System.Windows.Forms.NumericUpDown();
+            this.txtIniciador = new System.Windows.Forms.NumericUpDown();
+            this.btnIniciar = new System.Windows.Forms.Button();
             this.txtImpresionNumero = new System.Windows.Forms.ListBox();
             this.grbCalculo = new System.Windows.Forms.GroupBox();
-            this.lblSuma = new System.Windows.Forms.Label();
-            this.lblPromedio = new System.Windows.Forms.Label();
-            this.lblMaximo = new System.Windows.Forms.Label();
-            this.lblMinimo = new System.Windows.Forms.Label();
-            this.txtSuma = new System.Windows.Forms.TextBox();
-            this.txtPromedio = new System.Windows.Forms.TextBox();
-            this.txtMaximo = new System.Windows.Forms.TextBox();
             this.txtMinimo = new System.Windows.Forms.TextBox();
-            this.btnIniciar = new System.Windows.Forms.Button();
-            this.txtIniciador = new System.Windows.Forms.NumericUpDown();
-            this.txtNumero = new System.Windows.Forms.NumericUpDown();
+            this.txtMaximo = new System.Windows.Forms.TextBox();
+            this.txtPromedio = new System.Windows.Forms.TextBox();
+            this.txtSuma = new System.Windows.Forms.TextBox();
+            this.lblMinimo = new System.Windows.Forms.Label();
+            this.lblMaximo = new System.Windows.Forms.Label();
+            this.lblPromedio = new System.Windows.Forms.Label();
+            this.lblSuma = new System.Windows.Forms.Label();
             this.grbNumero.SuspendLayout();
-            this.grbCalculo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIniciador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumero)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIniciador)).BeginInit();
+            this.grbCalculo.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNumero
@@ -84,6 +84,30 @@
             this.grbNumero.TabStop = false;
             this.grbNumero.Text = "Ingresar Numero";
             // 
+            // txtNumero
+            // 
+            this.txtNumero.Location = new System.Drawing.Point(152, 29);
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(120, 22);
+            this.txtNumero.TabIndex = 2;
+            // 
+            // txtIniciador
+            // 
+            this.txtIniciador.Location = new System.Drawing.Point(505, 29);
+            this.txtIniciador.Name = "txtIniciador";
+            this.txtIniciador.Size = new System.Drawing.Size(120, 22);
+            this.txtIniciador.TabIndex = 1;
+            // 
+            // btnIniciar
+            // 
+            this.btnIniciar.Location = new System.Drawing.Point(424, 17);
+            this.btnIniciar.Name = "btnIniciar";
+            this.btnIniciar.Size = new System.Drawing.Size(75, 34);
+            this.btnIniciar.TabIndex = 0;
+            this.btnIniciar.Text = "Iniciar";
+            this.btnIniciar.UseVisualStyleBackColor = true;
+            this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
+            // 
             // txtImpresionNumero
             // 
             this.txtImpresionNumero.Dock = System.Windows.Forms.DockStyle.Left;
@@ -93,6 +117,7 @@
             this.txtImpresionNumero.Name = "txtImpresionNumero";
             this.txtImpresionNumero.Size = new System.Drawing.Size(268, 259);
             this.txtImpresionNumero.TabIndex = 4;
+            this.txtImpresionNumero.SelectedIndexChanged += new System.EventHandler(this.txtImpresionNumero_SelectedIndexChanged);
             // 
             // grbCalculo
             // 
@@ -112,32 +137,37 @@
             this.grbCalculo.TabStop = false;
             this.grbCalculo.Text = "Cálculos";
             // 
-            // lblSuma
+            // txtMinimo
             // 
-            this.lblSuma.AutoSize = true;
-            this.lblSuma.Location = new System.Drawing.Point(15, 42);
-            this.lblSuma.Name = "lblSuma";
-            this.lblSuma.Size = new System.Drawing.Size(48, 17);
-            this.lblSuma.TabIndex = 0;
-            this.lblSuma.Text = "Suma:";
+            this.txtMinimo.Enabled = false;
+            this.txtMinimo.Location = new System.Drawing.Point(93, 122);
+            this.txtMinimo.Name = "txtMinimo";
+            this.txtMinimo.Size = new System.Drawing.Size(100, 22);
+            this.txtMinimo.TabIndex = 7;
             // 
-            // lblPromedio
+            // txtMaximo
             // 
-            this.lblPromedio.AutoSize = true;
-            this.lblPromedio.Location = new System.Drawing.Point(15, 71);
-            this.lblPromedio.Name = "lblPromedio";
-            this.lblPromedio.Size = new System.Drawing.Size(72, 17);
-            this.lblPromedio.TabIndex = 1;
-            this.lblPromedio.Text = "Promedio:";
+            this.txtMaximo.Enabled = false;
+            this.txtMaximo.Location = new System.Drawing.Point(93, 94);
+            this.txtMaximo.Name = "txtMaximo";
+            this.txtMaximo.Size = new System.Drawing.Size(100, 22);
+            this.txtMaximo.TabIndex = 6;
             // 
-            // lblMaximo
+            // txtPromedio
             // 
-            this.lblMaximo.AutoSize = true;
-            this.lblMaximo.Location = new System.Drawing.Point(15, 99);
-            this.lblMaximo.Name = "lblMaximo";
-            this.lblMaximo.Size = new System.Drawing.Size(59, 17);
-            this.lblMaximo.TabIndex = 2;
-            this.lblMaximo.Text = "Máximo:";
+            this.txtPromedio.Enabled = false;
+            this.txtPromedio.Location = new System.Drawing.Point(93, 66);
+            this.txtPromedio.Name = "txtPromedio";
+            this.txtPromedio.Size = new System.Drawing.Size(100, 22);
+            this.txtPromedio.TabIndex = 5;
+            // 
+            // txtSuma
+            // 
+            this.txtSuma.Enabled = false;
+            this.txtSuma.Location = new System.Drawing.Point(93, 38);
+            this.txtSuma.Name = "txtSuma";
+            this.txtSuma.Size = new System.Drawing.Size(100, 22);
+            this.txtSuma.TabIndex = 4;
             // 
             // lblMinimo
             // 
@@ -148,61 +178,32 @@
             this.lblMinimo.TabIndex = 3;
             this.lblMinimo.Text = "Mínimo:";
             // 
-            // txtSuma
+            // lblMaximo
             // 
-            this.txtSuma.Enabled = false;
-            this.txtSuma.Location = new System.Drawing.Point(93, 38);
-            this.txtSuma.Name = "txtSuma";
-            this.txtSuma.Size = new System.Drawing.Size(100, 22);
-            this.txtSuma.TabIndex = 4;
+            this.lblMaximo.AutoSize = true;
+            this.lblMaximo.Location = new System.Drawing.Point(15, 99);
+            this.lblMaximo.Name = "lblMaximo";
+            this.lblMaximo.Size = new System.Drawing.Size(59, 17);
+            this.lblMaximo.TabIndex = 2;
+            this.lblMaximo.Text = "Máximo:";
             // 
-            // txtPromedio
+            // lblPromedio
             // 
-            this.txtPromedio.Enabled = false;
-            this.txtPromedio.Location = new System.Drawing.Point(93, 66);
-            this.txtPromedio.Name = "txtPromedio";
-            this.txtPromedio.Size = new System.Drawing.Size(100, 22);
-            this.txtPromedio.TabIndex = 5;
+            this.lblPromedio.AutoSize = true;
+            this.lblPromedio.Location = new System.Drawing.Point(15, 71);
+            this.lblPromedio.Name = "lblPromedio";
+            this.lblPromedio.Size = new System.Drawing.Size(72, 17);
+            this.lblPromedio.TabIndex = 1;
+            this.lblPromedio.Text = "Promedio:";
             // 
-            // txtMaximo
+            // lblSuma
             // 
-            this.txtMaximo.Enabled = false;
-            this.txtMaximo.Location = new System.Drawing.Point(93, 94);
-            this.txtMaximo.Name = "txtMaximo";
-            this.txtMaximo.Size = new System.Drawing.Size(100, 22);
-            this.txtMaximo.TabIndex = 6;
-            // 
-            // txtMinimo
-            // 
-            this.txtMinimo.Enabled = false;
-            this.txtMinimo.Location = new System.Drawing.Point(93, 122);
-            this.txtMinimo.Name = "txtMinimo";
-            this.txtMinimo.Size = new System.Drawing.Size(100, 22);
-            this.txtMinimo.TabIndex = 7;
-            // 
-            // btnIniciar
-            // 
-            this.btnIniciar.Location = new System.Drawing.Point(424, 17);
-            this.btnIniciar.Name = "btnIniciar";
-            this.btnIniciar.Size = new System.Drawing.Size(75, 34);
-            this.btnIniciar.TabIndex = 0;
-            this.btnIniciar.Text = "Iniciar";
-            this.btnIniciar.UseVisualStyleBackColor = true;
-            this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
-            // 
-            // txtIniciador
-            // 
-            this.txtIniciador.Location = new System.Drawing.Point(505, 29);
-            this.txtIniciador.Name = "txtIniciador";
-            this.txtIniciador.Size = new System.Drawing.Size(120, 22);
-            this.txtIniciador.TabIndex = 1;
-            // 
-            // txtNumero
-            // 
-            this.txtNumero.Location = new System.Drawing.Point(152, 29);
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(120, 22);
-            this.txtNumero.TabIndex = 2;
+            this.lblSuma.AutoSize = true;
+            this.lblSuma.Location = new System.Drawing.Point(15, 42);
+            this.lblSuma.Name = "lblSuma";
+            this.lblSuma.Size = new System.Drawing.Size(48, 17);
+            this.lblSuma.TabIndex = 0;
+            this.lblSuma.Text = "Suma:";
             // 
             // FrmPrincipal
             // 
@@ -216,10 +217,10 @@
             this.Text = "Principal";
             this.grbNumero.ResumeLayout(false);
             this.grbNumero.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNumero)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIniciador)).EndInit();
             this.grbCalculo.ResumeLayout(false);
             this.grbCalculo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIniciador)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNumero)).EndInit();
             this.ResumeLayout(false);
 
         }
